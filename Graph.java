@@ -13,14 +13,14 @@ public class Graph {
     Graph() {
         G = new DArray<>();
     }
-    
+
     Graph(int size) {
         G = new DArray<>();
         DArray<Integer> tmp = new DArray<>();
 //        tmp = new DArray<>();
         tmp.add(0, -1);
         for (int i = 0; i < size; i++) {
-            
+
             G.add(i, tmp);
         }
     }
@@ -35,12 +35,19 @@ public class Graph {
         tmp.add(el_i, r);
         G.add(g_i, tmp);
     }
-    
-    public void setArr(Integer... args) { // 
-        int g_i = args [0];        
-        int sizeArr = args.length - 1;
+
+//    public void setArr(Integer... args) { // 
+//        int g_i = args [0];        
+//        int sizeArr = args.length - 1;
+//        for (int el_i = 0; el_i < sizeArr; el_i++) {
+//            set(g_i, el_i, args[el_i+1]);
+//        }
+//    }
+    public void setArr(int v, int[] arr) { // 
+        int g_i = v;
+        int sizeArr = arr.length;
         for (int el_i = 0; el_i < sizeArr; el_i++) {
-            set(g_i, el_i, args[el_i+1]);
+            set(g_i, el_i, arr[el_i]);
         }
     }
 

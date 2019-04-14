@@ -34,19 +34,18 @@ public class GraphKosarajuApp {
 //        
 //        
 //        System.out.println("-------");
-
-
 /////   добавлен конструктор с параметрами и улучшен метод заполения графа
-
-        Graph G1 = new Graph(10);        
+        Graph G1 = new Graph(10);
 //      заполняем граф
-        G1.setArr(1,2); // 1 вершина уходит на 2
-        G1.setArr(2,3);
-        G1.setArr(3,4);
-        G1.setArr(4,1);
-        G1.setArr(5,3,6); // 5 вершина уходит на 3 и 6
-        G1.setArr(6,8);
-        G1.setArr(7,5,6,9);
+
+        G1.setArr(1, new int[]{2});
+        G1.setArr(2, new int[]{3});
+        G1.setArr(3, new int[]{4});
+        G1.setArr(4, new int[]{1});
+        G1.setArr(5, new int[]{3, 6});
+        G1.setArr(6, new int[]{8});
+        G1.setArr(7, new int[]{5, 6, 9});
+
         G1.displayGraph(); // вывод массива векторов смежности
         G1.kosaraju(); // Алгоритм Косарайю
         G1.displayComponent(); // вывод компонент (вершина - номер ее компоненты)
